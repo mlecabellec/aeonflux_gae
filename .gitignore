@@ -1,0 +1,7 @@
+.gradle
+/build/
+!/src/main/resources/app.yaml
+*.iml
+.idea
+.DS_Store
+*.class
