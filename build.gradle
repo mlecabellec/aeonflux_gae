@@ -1,0 +1,83 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'jacoco'
+    id 'checkstyle'
+    id 'pmd'
+    id 'com.github.spotbugs' version '6.0.12'
+}
+
+group = 'com.aeonflux'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    
+    // Google Cloud Datastore / Firestore (Standard mode) & Spring Cloud GCP
+    implementation 'com.google.cloud:google-cloud-datastore:2.19.1'
+    
+    // Firebase Admin (for App Check verification)
+    implementation 'com.google.firebase:firebase-admin:9.2.0'
+
+    // Lombok for clean boilerplates
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'com.tngtech.archunit:archunit-junit5:1.2.1'
+    
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
+// JaCoCo test coverage setup
+jacoco {
+    toolVersion = '0.8.11'
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+// Checkstyle configurations
+checkstyle {
+    toolVersion = '10.12.5'
+    configFile = file('config/checkstyle/checkstyle.xml')
+    ignoreFailures = false
+    showViolations = true
+}
+
+// PMD configurations
+pmd {
+    toolVersion = '6.55.0'
+    ruleSetConfig = resources.text.fromFile('config/pmd/ruleset.xml')
+    ignoreFailures = false
+}
+
+// SpotBugs configurations
+spotbugs {
+    toolVersion = '4.8.3'
+    ignoreFailures = false
+    showStackTraces = true
+}
