@@ -11,4 +11,6 @@ This directory details the backend service architecture.
 
 ## Documents
 
-* [Datastore Schema](../../.antigravity/knowledge_base/gae_datastore_schema.md) - NoSQL Datastore Mode schemas and properties.
+* [Datastore Schema](../../../.antigravity/knowledge_base/gae_datastore_schema.md) - NoSQL Datastore Mode schemas and properties.
+* [rules_index.md](file:///home/m/git/aeonflux_gae/doc/docs/architecture/rules_index.md) - Project constraints, coding standards, and AI agent rules.
+

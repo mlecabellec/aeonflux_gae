@@ -28,7 +28,7 @@ public class CatalogService {
     public List<CatalogFeed> searchCatalog(String query, String type, int page, int limit) {
         log.info("Searching catalog for query: '{}', type: '{}', page: {}, limit: {}", query, type, page, limit);
         // Implement Firestore Datastore query logic here. Returning empty list for now.
-        return dummyCatalog;
+        return new ArrayList<>(dummyCatalog);
     }
 
     public long countSearchResults(String query, String type) {

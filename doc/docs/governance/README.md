@@ -10,6 +10,6 @@ This directory details static analysis configurations and coding rules.
 
 ## Related Configuration Files
 
-* [Java GAE Rules](../../.antigravity/rules/02-java-gae-rules.md) - Coding style, frameworks, and patterns for the backend.
-* [Clean Code Rules](../../.antigravity/rules/03-architecture-clean-code.md) - SOLID principles and design patterns.
-* [Testing Rules](../../.antigravity/rules/04-testing-enforcement.md) - Testing boundaries and goals.
+* [Java GAE Rules](../../../.antigravity/rules/02-java-gae-rules.md) - Coding style, frameworks, and patterns for the backend.
+* [Clean Code Rules](../../../.antigravity/rules/03-architecture-clean-code.md) - SOLID principles and design patterns.
+* [Testing Rules](../../../.antigravity/rules/04-testing-enforcement.md) - Testing boundaries and goals.
